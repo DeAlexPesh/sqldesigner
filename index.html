@@ -1,19 +1,14 @@
 <!doctype html>
-<!--
-        WWW SQL Designer, (C) 2005-2015 Ondrej Zara, ondras@zarovi.cz
-        Version: 2.7
-        See license.txt for licencing information.
--->
 <html>
 
     <head>
-        <title>Desktop SQL Designer</title>
+        <title>SQL Designer</title>
         <meta name="viewport" content="initial-scale=1,maximum-scale=1" />
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <link rel="stylesheet" href="styles/print.css" type="text/css" media="print" />
-        <!--Import Google Icon Font-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import Icon Font-->        
+        <link rel="stylesheet" href="styles/icons.css">        
         <!--Import materialize.css-->
         <link rel="stylesheet" href="styles/mui.min.css" />
         <link rel="stylesheet" href="styles/style.css" media="all" />
@@ -48,7 +43,7 @@
         <div id="area"></div>
         <div id="controls">
             <div id="menu" class="mui-dropdown mui--z1">
-                <button class="mui-btn mui-btn--raised mui-btn" data-mui-toggle="dropdown"><i class="material-icons">menu</i></button>
+                <button class="mui-btn mui-btn--raised mui-btn" data-mui-toggle="dropdown"><i class="icon-menu"></i></button>
                 <ul class="mui-dropdown__menu">
                     <li>
                         <button class="mui-btn mui-btn--flat" type="button" id="saveload"></button>
@@ -57,14 +52,24 @@
                         <button class="mui-btn mui-btn--flat" type="button" id="options">Hola</button>
                     </li>
                     <li>
-                        <a id="docs" class="mui-btn mui-btn--flat" href="https://github.com/lt-mayonesa/sqldesigner/wiki" target="_blank">Docs</a>
+                        <a id="docs" style="display:none">Docs</a>
+                    </li>
+                    <li id="mui-help">
+                        <table>
+                            <tr><td class="td0">сохранить</td><td>[</td><td class="mui-help-center">F2</td><td class="td1">]</td></tr>
+                            <tr><td class="td0">загрузить</td><td>[</td><td class="mui-help-center">F4</td><td class="td1">]</td></tr>
+                            <tr><td class="td0">добавить таблицу</td><td>[</td><td class="mui-help-center">a</td><td class="td1">]</td></tr>
+                            <tr><td class="td0">редактировать</td><td>[</td><td class="mui-help-center">e</td><td class="td1">]</td></tr>
+                            <tr><td class="td0">добавить поле</td><td>[</td><td class="mui-help-center">f</td><td class="td1">]</td></tr>
+                            <tr><td class="td0">создать внешний ключ</td><td>[</td><td class="mui-help-center">x</td><td class="td1">]</td></tr>
+                            <tr><td class="td0">присоединить внешний ключ</td><td>[</td><td class="mui-help-center">c</td><td class="td1">]</td></tr>
+                            <tr><td class="td0">увеличит</td><td>[</td><td class="mui-help-center">+</td><td class="td1">]</td></tr>
+                            <tr><td class="td0">уменьшить</td><td>[</td><td class="mui-help-center">-</td><td class="td1">]</td></tr>
+                        </table>
                     </li>
                 </ul>
             </div>
-            <p style="margin-left: 12px; padding-top: 60px;">
-                <small>[F2] Save local | [F4] Load local<br>[+] / [-] zoom</small>
-            </p>
-            <button id="toogle_min" class="mui-btn mui-btn--raised mui-btn--small mui--align-middle"><i class="material-icons">keyboard_arrow_up</i></button>
+            <button id="toogle_min" class="mui-btn mui-btn--raised mui-btn--small mui--align-middle"><i class="icon-show-menu"></i></button>
 
             <div id="bar" class="mui-panel mui--z2">
                 <!--tooltips-->
@@ -84,27 +89,27 @@
                 <span class="tooltip" data-for="cleartables"></span>
 
                 <div class="holder">
-                    <button type="button" id="addtable" class="mui-btn mui-btn--raised mui-btn--accent"><i class="material-icons">add</i></button>
-                    <button type="button" id="edittable" class="mui-btn mui-btn--raised"><i class="material-icons">edit</i></button>
-                    <button type="button" id="tablekeys"  class="mui-btn mui-btn--raised"><i class="material-icons">vpn_key</i></button>
-                    <button type="button" id="removetable"  class="mui-btn mui-btn--raised"><i class="material-icons">delete</i></button>
+                    <button type="button" id="addtable" class="mui-btn mui-btn--raised mui-btn--accent"><i class="icon-add-table"></i></button>
+                    <button type="button" id="edittable" class="mui-btn mui-btn--raised"><i class="icon-edit-table"></i></button>
+                    <button type="button" id="tablekeys"  class="mui-btn mui-btn--raised"><i class="icon-keys"></i></button>
+                    <button type="button" id="removetable"  class="mui-btn mui-btn--raised"><i class="icon-remove-table"></i></button>
                 </div>
                 <div class="holder mui--divider-left">
-                    <button type="button" id="addrow"  class="mui-btn mui-btn--raised"><i class="material-icons">add_circle_outline</i></button>
-                    <button type="button" id="editrow"  class="mui-btn mui-btn--raised" ><i class="material-icons">border_color</i></button>
+                    <button type="button" id="addrow"  class="mui-btn mui-btn--raised"><i class="icon-add-field"></i></button>
+                    <button type="button" id="editrow"  class="mui-btn mui-btn--raised" ><i class="icon-edit-field"></i></button>
                     <div class="holder">
-                        <button type="button" id="uprow" class="small mui-btn mui-btn--raised"><i class="material-icons">arrow_drop_up</i></button>
-                        <button type="button" id="downrow" class="small mui-btn mui-btn--raised" ><i class="material-icons">arrow_drop_down</i></button>
+                        <button type="button" id="uprow" class="small mui-btn mui-btn--raised"><i class="icon-field-up"></i></button>
+                        <button type="button" id="downrow" class="small mui-btn mui-btn--raised" ><i class="icon-field-down"></i></button>
                     </div>
-                    <button type="button" id="foreigncreate"  class="mui-btn mui-btn--raised" ><i class="material-icons">play_circle_outline</i></button>
-                    <button type="button" id="foreignconnect"  class="mui-btn mui-btn--raised" ><i class="material-icons">compare_arrows</i></button>
-                    <button type="button" id="foreigndisconnect"  class="mui-btn mui-btn--raised" ><i class="material-icons">content_cut</i></button>
-                    <button type="button" id="removerow"  class="mui-btn mui-btn--raised" ><i class="material-icons">remove</i></button>
+                    <button type="button" id="foreigncreate"  class="mui-btn mui-btn--raised" ><i class="icon-add-key"></i></button>
+                    <button type="button" id="foreignconnect"  class="mui-btn mui-btn--raised" ><i class="icon-connect-key"></i></button>
+                    <button type="button" id="foreigndisconnect"  class="mui-btn mui-btn--raised" ><i class="icon-remove-key"></i></button>
+                    <button type="button" id="removerow"  class="mui-btn mui-btn--raised" ><i class="icon-remove-field"></i></button>
                 </div>
                 <div class="holder mui--divider-left">
-                    <button type="button" id="aligntables"  class="mui-btn mui-btn--raised" ><i class="material-icons">grid_on</i></button>
-                    <button type="button" id="cleartables"  class="mui-btn mui-btn--raised" ><i class="material-icons">delete_sweep</i></button>
-                    <button type="button" id="toggle" class="mui-btn mui-btn--flat" ><i class="material-icons">keyboard_arrow_down</i></button>
+                    <button type="button" id="aligntables"  class="mui-btn mui-btn--raised" ><i class="icon-pos"></i></button>
+                    <button type="button" id="cleartables"  class="mui-btn mui-btn--raised" ><i class="icon-clean"></i></button>
+                    <button type="button" id="toggle" class="mui-btn mui-btn--raised" ><i class="icon-hide-menu"></i></button>
                 </div>
             </div>
 
@@ -123,8 +128,8 @@
                 </div>
                 <div id="windowcontent"></div>
                 <div id="windowcontrol">
-                    <button id="windowok" class="mui-btn mui-btn--flat mui-btn--accent"><i class="material-icons">done</i></button>
-                    <button id="windowcancel" class="mui-btn mui-btn--flat" ><i class="material-icons">clear</i></button>
+                    <button id="windowok" class="mui-btn mui-btn--flat mui-btn--accent"><i class="icon-add-key"></i></button>
+                    <button id="windowcancel" class="mui-btn mui-btn--flat" ><i class="icon-remove-key"></i></button>
                 </div>
             </div>
         </div>
@@ -134,7 +139,7 @@
             <small>* <span class="small" id="optionsnotice"></span></small>
             <hr>
             <div class="mui-container-fluid">
-                <div class="mui-row">
+                <div class="mui-row" style="display:none">
                     <div class="mui-col-md-12 mui-select">
                         <label id="language" for="optionlocale"></label>
                         <select id="optionlocale">
@@ -301,10 +306,10 @@
                         <div class="mui-col-md-2">
                             <ul class="mui-list--unstyled">
                                 <li>                                        
-                                    <button class="mui-btn mui-btn--raised small" id="keyleft"><i class="material-icons">fast_rewind</i></button>
+                                    <button class="mui-btn mui-btn--raised small" id="keyleft"><i class="icon-field-left"></i></button>
                                 </li>
                                 <li>
-                                    <button class="mui-btn mui-btn--raised small" id="keyright"><i class="material-icons">fast_forward</i></button>
+                                    <button class="mui-btn mui-btn--raised small" id="keyright"><i class="icon-field-right"></i></button>
                                 </li>
                             </ul>
                         </div>
