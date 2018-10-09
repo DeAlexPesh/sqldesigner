@@ -48,7 +48,7 @@ body {
 
 #area {
     position: relative;
-    background: transparent url(../images/back_dim.png);
+    background: transparent url(../images/back.png);
     opacity: 0.7;
     width: 3000px;
     height: 3000px;
@@ -133,11 +133,11 @@ body {
     position: fixed;
     width: 100px;
     height: 100px;
-    right: 5px;
-    top: 5px;
+    right: 12px;
+    top: 12px;
     background-color: #fff;
     /*border: 1px solid #000;*/
-    opacity: 0.9;
+    opacity: 0.7;
     overflow: hidden;
 }
 

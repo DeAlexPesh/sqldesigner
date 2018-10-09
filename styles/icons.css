@@ -1,0 +1,81 @@
+@font-face {
+  font-family: 'db';
+  src:  url('../fonts/db/db.eot?4djove');
+  src:  url('../fonts/db/db.eot?4djove#iefix') format('embedded-opentype'),
+    url('../fonts/db/db.ttf?4djove') format('truetype'),
+    url('../fonts/db/db.woff?4djove') format('woff'),
+    url('../fonts/db/db.svg?4djove#db') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+i {
+  font-family: 'db' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  font-size: 2em;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-menu:before {
+  content: "\e900";
+}
+.icon-add-table:before {
+  content: "\e901";
+}
+.icon-edit-table:before {
+  content: "\e902";
+}
+.icon-keys:before {
+  content: "\e903";
+}
+.icon-remove-table:before {
+  content: "\e904";
+}
+.icon-add-field:before {
+  content: "\e905";
+}
+.icon-edit-field:before {
+  content: "\e906";
+}
+.icon-field-up:before {
+  content: "\e907";
+}
+.icon-field-down:before {
+  content: "\e908";
+}
+.icon-add-key:before {
+  content: "\e909";
+}
+.icon-connect-key:before {
+  content: "\e90a";
+}
+.icon-remove-key:before {
+  content: "\e90b";
+}
+.icon-remove-field:before {
+  content: "\e90c";
+}
+.icon-pos:before {
+  content: "\e90d";
+}
+.icon-clean:before {
+  content: "\e90e";
+}
+.icon-show-menu:before {
+  content: "\e90f";
+}
+.icon-hide-menu:before {
+  content: "\e910";
+}
+.icon-field-left:before {
+  content: "\e911";
+}
+.icon-field-right:before {
+  content: "\e912";
+}
