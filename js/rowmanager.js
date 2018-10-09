@@ -88,7 +88,7 @@ SQL.RowManager.prototype.foreigncreate = function (e) { /* start creating fk */
     } else {
         this.creating = true;
         this.dom.foreigncreate.title = _("foreignpending");
-        this.dom.foreigncreate.innerHTML = '<i class="material-icons">clear</i>';
+        this.dom.foreigncreate.innerHTML = '<i class="icon-remove-key"></i>';
         this.owner.snackbar.show(_("foreignpending"), true);
     }
 };
@@ -100,7 +100,7 @@ SQL.RowManager.prototype.foreignconnect = function (e) { /* start drawing fk */
     } else {
         this.connecting = true;
         this.dom.foreignconnect.title = _("foreignconnectpending");
-        this.dom.foreignconnect.innerHTML = '<i class="material-icons">clear</i>';
+        this.dom.foreignconnect.innerHTML = '<i class="icon-connect-key"></i>';
         this.owner.snackbar.show(_("foreignconnectpending"), true);
     }
 };
@@ -120,14 +120,14 @@ SQL.RowManager.prototype.endCreate = function () {
     this.creating = false;
     this.owner.snackbar.hide();
     this.dom.foreigncreate.title = _("foreigncreate");
-    this.dom.foreigncreate.innerHTML = '<i class="material-icons">play_circle_outline</i>';
+    this.dom.foreigncreate.innerHTML = '<i class="icon-add-key"></i>';
 };
 
 SQL.RowManager.prototype.endConnect = function () {
     this.connecting = false;
     this.owner.snackbar.hide();
     this.dom.foreignconnect.title = _("foreignconnect");
-    this.dom.foreignconnect.innerHTML = '<i class="material-icons">compare_arrows</i>';
+    this.dom.foreignconnect.innerHTML = '<i class="icon-connect-key"></i>';
 };
 
 SQL.RowManager.prototype.up = function (e) {
@@ -258,6 +258,6 @@ SQL.RowManager.prototype.edit = function (e) {
 SQL.RowManager.prototype.setEditing = function (editing) {
     this.editing = editing;
     this.dom.editrow.innerHTML = this.editing ?
-            '<i class="material-icons">done</i>' :
-            '<i class="material-icons">edit</i>';
+            '<i class="icon-edit-field"></i>' :
+            '<i class="icon-edit-field"></i>';
 };

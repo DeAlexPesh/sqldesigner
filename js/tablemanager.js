@@ -161,7 +161,7 @@ SQL.TableManager.prototype.preAdd = function (e) { /* click add new table */
         this.adding = true;
         OZ.DOM.addClass("area", "adding");
         this.oldvalue = this.dom.addtable.innerHTML;
-        this.dom.addtable.innerHTML = '<i class="material-icons">clear</i>';
+        this.dom.addtable.innerHTML = '<i class="icon-remove-table"></i>';
         this.owner.snackbar.show(_('addpending'));
     }
 };
