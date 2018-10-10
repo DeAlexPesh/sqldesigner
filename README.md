@@ -1,1 +1,1 @@
-# sqldesigner.github.io
+# https://dealexpesh.github.io/sqldesigner/
