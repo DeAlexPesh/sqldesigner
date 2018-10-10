@@ -309,6 +309,9 @@ body {
 #menu li button {
     width: 100%;
 }
+#menu i {
+    font-size: 2.3em;
+}
 
 .tooltip {
     -webkit-transform: scale(0);
